@@ -1,0 +1,52 @@
+import java.util.*;
+
+ class StringBufferOperations
+ {
+   public static void main(String args[])
+   { 
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String s=sc.nextLine(); 
+    String temp=new String(s);
+  
+    System.out.println("enter how many times do you want to replace characters");
+    StringBuilder sb=new StringBuilder(s);
+    int q=sc.nextInt();
+    int i;
+    while(q>0)
+    {
+      System.out.println("enter position and character");
+      int ind=sc.nextInt();
+      char c=sc.next().charAt(0);
+      sb.setCharAt(ind-1,c);
+      q--;
+    }
+    System.out.println(sb.toString());
+    System.out.println("enter how many times do you want to exchange characters");
+    int m=sc.nextInt();
+    String forch= new String(sb);
+    char ch[]=forch.toCharArray();
+    ;
+    while(m>0)
+    {
+      System.out.println("enter  exchange positions ");
+      int a=sc.nextInt();
+      int b=sc.nextInt();
+      char t=ch[a-1];
+      ch[a-1]=ch[b-1];
+      ch[b-1]=t;
+      m--;
+    }
+    String fin=String.valueOf(ch);
+    System.out.println(fin);
+    int count=0;
+    for(i=0;i<fin.length();i++)
+    {
+      if(temp.contains(fin.substring(i,i+1)))
+      
+      count++;
+    }
+    System.out.println(count);
+    
+   }
+ }
