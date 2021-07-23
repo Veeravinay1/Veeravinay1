@@ -1,0 +1,36 @@
+import java.util.*;
+
+ class ModifyValue
+ {
+   public static void main(String args[])
+   {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter hashmap size");
+    int n=sc.nextInt();
+   // int a[]=new int[n];
+    Hashtable<Integer,Integer> h=new Hashtable<Integer,Integer>();
+    System.out.println("enter Hashtable elements");
+    int i;
+    for(i=0;i<n;i++)
+    {
+      h.put(sc.nextInt(),sc.nextInt());
+    } 
+    TreeMap<Integer,Integer> l=new TreeMap<Integer,Integer>(h);
+    System.out.println(l);
+    System.out.println("enter key value");
+    int key=sc.nextInt();
+    int flag=1;
+    for(i=0;i<n;i++)
+    { 
+      if(h.containsKey(key))
+      l.put(key,h.get(key)+5000);
+      else
+      flag=0;
+    } 
+    if(flag==0)
+    System.out.println("not found");
+    else
+    System.out.println(l);
+   }
+   
+ }
